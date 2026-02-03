@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>StudentForm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b4ebe3805d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+
+<body class="min-h-screen">
+    <header class="flex justify-between items-center py-5 px-8 border-b">
+        <div class="flex items-center space-x-2">
+            <h1 class="text-2xl font-semibold">Sunset Motel</h1>
+        </div>
+
+        <span class="text-xl font-medium">Welcome to Sunset Motel</span>
+    </header>
+    <div class="bg-white p-14 rounded-2xl shadow-lg w-full h-screen">
+
+        <h1 class="text-2xl font-bold mb-6"><a href="index.html"><i class="fa-solid fa-angle-left text-black"></i></a>
+            Enter Your Details</h1>
+
+        <form id="registerForm" method="POST" enctype="multipart/form-data" class="space-y-5 flex justify-between">
+            <div class="space-y-5 w-130">
+
+                <!-- Company Name -->
+                <div class="flex gap-30">
+                    <label class="block text-gray-700 font-medium mb-1">Company Name<span
+                            class="text-red-500">*</span></label>
+                    <select
+                        class="w-full border border-gray-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none">
+                        <option>Company name</option>
+                        <option>Sunset Group</option>
+                        <option>Golden Inn</option>
+                    </select>
+                </div>
+
+                <!-- Name -->
+                <div class="flex gap-38">
+                    <label class="block font-medium mb-1">Name</label>
+                    <input type="text" id="name" required
+                        class="w-full border rounded-md p-2 outline-none focus:ring focus:ring-blue-300" />
+                </div>
+                <!-- Room Number -->
+                <div class="flex gap-32">
+                    <label class="block text-gray-700 font-medium mb-1">Room Number</label>
+                    <select
+                        class="w-full border border-gray-300 rounded-lg p-2.5 bg-white focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none">
+                        <option>Room number</option>
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                    </select>
+                </div>
+
+                <!-- Meal Type -->
+                <div class="flex gap-30">
+                    <label class="block text-gray-700 font-medium ">Meal Type :</label>
+                    <p class="font-semibold text-lg">Dinner</p>
+                </div>
+               <a href="sucess.html" class="w-30 bg-[#FF9A11] text-white py-2 rounded-md transition">
+                    Submit</a>
+            </div>
+
+            <div>
+
+                <!-- File Upload Field -->
+                <div>
+                    <label for="file" class=" block text-sm font-medium text-gray-700 mb-2">Upload Image /
+                        Document</label>
+
+                    <!-- Drop Zone / clickable label -->
+                    <label for="file" id="dropzone" tabindex="0"
+                        class="group flex flex-col items-center justify-center gap-3 border-2 border-dashed border-gray-300 rounded-lg p-4 cursor-pointer hover:border-blue-400 focus:ring-2 focus:ring-blue-300 transition">
+                        <!-- Icon + instructions -->
+                        <div class="flex items-center gap-3">
+                            <svg class="w-8 h-8 text-gray-400 group-hover:text-blue-500"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M7 16V8a4 4 0 118 0v8m-5-3h4" />
+                            </svg>
+                            <div class="text-sm text-gray-600">
+                                <span class="font-medium text-gray-700">Click To Update</span>
+                                <span class="block text-xs text-gray-500">or drag & drop. (Images, PDF)Max 5MB</span>
+                            </div>
+                        </div>
+
+                        <!-- Preview area (hidden untill file selected) -->
+                        <div id="previewContainer" class="hidden w-full">
+                            <!-- For Images: show thumbnail -->
+                            <img id="imgPreview" cl ass="mx-auto mt-3 w-28 h-28 object-cover rounded-md border hidden"
+                                alt="Preview">
+
+                            <!-- For non-image: show filename -->
+                            <div id="fileInfo" class="mt-2 text-shadow-amber-900 text-gray-700 hidden">
+                                <span id="fileName" class="font-medium"></span>
+                                <span id="fileSize" class="ml-2 text-xs text-gray-500"></span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- Actaul hidden file input -->
+                    <input type="file" name="image" id="file" accept="image/*,.pdf,.doc,.docx" class="sr-only">
+
+                    <!-- Error Message -->
+                    <p id="fileError" class="mt-2 text-sm text-red-600 hidden"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+
+  <div class="text-center">
+    <!-- Green Check Icon -->
+    <div class="flex justify-center mb-6">
+      <div class="bg-green-500 rounded-full p-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="text-2xl font-semibold mb-2">Your order is confirmed...!</h1>
+
+    <div id="orderDetails"
+      class="mt-8 bg-white shadow-lg rounded-lg p-6 border border-gray-200 w-full max-w-lg text-left">
+      <div class="grid grid-cols-2 gap-y-3 text-gray-700">
+        <p class="font-medium">Name:</p>
+        <p id="name"></p>
+        <p class="font-medium">Company Name:</p>
+        <p id="company"></p>
+        <p class="font-medium">Room Number:</p>
+        <p id="room"></p>
+        <p class="font-medium">Meal Type:</p>
+        <p id="meal"></p>
+        <p class="font-medium">Date & Time:</p>
+        <p id="datetime"></p>
+      </div>
+    </div>
+
+    <a href="index.html"
+      class="mt-8 inline-block bg-orange-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-orange-600 transition">
+      Back to Home
+    </a>
+  </div>
+
+  <script src="./sucess.js"></script>
+
+
+</body>
+</html>
